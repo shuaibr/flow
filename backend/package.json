@@ -12,7 +12,7 @@
     "postinstall": "npm run tsc",
     "lint": "eslint --ext .ts ."
   },
-  "author": "Sami Huuskonen",
+  "author": "Shuaib Reeyaz",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",

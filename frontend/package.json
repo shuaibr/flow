@@ -38,7 +38,7 @@
     "not dead",
     "not op_mini all"
   ],
-  "proxy": "http://flowapp.us-east-1.elasticbeanstalk.com/",
+  "proxy": "https://flow-ka27.onrender.com",
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.1",
