@@ -6,7 +6,7 @@ import { fetchWithTimeout } from '../utils';
 //     ? `${process.env.REACT_APP_API_URL}/api/habits`
 //     : '/api/habits';
 
-const baseUrl = '/api/habits';
+const baseUrl = 'https://flow-ka27.onrender.com/api/habits';
 
 let token: undefined | string = undefined;
 

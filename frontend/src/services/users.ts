@@ -5,7 +5,7 @@ import { fetchWithTimeout } from '../utils';
 //     ? `${process.env.REACT_APP_API_URL}/api/users`
 //     : '/api/users';
 
-const baseUrl = '/api/users';
+const baseUrl = 'https://flow-ka27.onrender.com/api/users';
 
 export const getUsers = async () => {
   try {
