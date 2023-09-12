@@ -1,10 +1,12 @@
 import { HabitType } from '../types';
 import { fetchWithTimeout } from '../utils';
 
-const baseUrl =
-  process.env.NODE_ENV === 'production'
-    ? `${process.env.REACT_APP_API_URL}/api/habits`
-    : '/api/habits';
+// const baseUrl =
+//   process.env.NODE_ENV === 'production'
+//     ? `${process.env.REACT_APP_API_URL}/api/habits`
+//     : '/api/habits';
+
+const baseUrl = '/api/habits';
 
 let token: undefined | string = undefined;
 

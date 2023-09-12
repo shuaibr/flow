@@ -1,9 +1,11 @@
 import { fetchWithTimeout } from '../utils';
 
-const baseurl =
-  process.env.NODE_ENV === 'production'
-    ? `${process.env.REACT_APP_API_URL}/api/login`
-    : '/api/login';
+// const baseurl =
+//   process.env.NODE_ENV === 'production'
+//     ? `${process.env.REACT_APP_API_URL}/api/login`
+//     : '/api/login';
+
+const baseUrl = '/api/habits';
 
 export const login = async (data: { username: string; password: string }) => {
   try {
@@ -13,7 +15,7 @@ export const login = async (data: { username: string; password: string }) => {
       headers: { 'Content-Type': 'application/json' },
     };
 
-    const response = await fetchWithTimeout(baseurl, options);
+    const response = await fetchWithTimeout(baseUrl, options);
     return response.json();
   } catch (exception) {
     console.log(exception);

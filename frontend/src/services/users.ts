@@ -1,9 +1,11 @@
 import { fetchWithTimeout } from '../utils';
 
-const baseUrl =
-  process.env.NODE_ENV === 'production'
-    ? `${process.env.REACT_APP_API_URL}/api/users`
-    : '/api/users';
+// const baseUrl =
+//   process.env.NODE_ENV === 'production'
+//     ? `${process.env.REACT_APP_API_URL}/api/users`
+//     : '/api/users';
+
+const baseUrl = '/api/habits';
 
 export const getUsers = async () => {
   try {
