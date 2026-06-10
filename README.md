@@ -1,4 +1,4 @@
-# Mizan — Personal Wellness OS
+# Flow — Personal Wellness OS
 
 > Project scope updated: this repo is now driven by [`SPEC.md`](./SPEC.md)
 > (vision, phases, data streams, out-of-scope) and

@@ -1,8 +1,8 @@
-# SPEC.md — Mizan: Personal Wellness OS
+# SPEC.md — Flow: Personal Wellness OS
 
 > GSD: read alongside PRINCIPLES.md. Personal-first; productization is a
-> gated Phase 5, not a design driver. "Mizan" (ميزان, balance/scale) is a
-> working name — rename freely.
+> gated Phase 5, not a design driver. The app is named "Flow" — keep this
+> name.
 
 ## Vision
 
