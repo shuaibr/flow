@@ -21,14 +21,14 @@ const loggerFormat = ':data ":method :url" :status :response-time';
 app.use(morgan(loggerFormat));
 
 mongoose
-  .connect("mongodb+srv://youngfence:Heba2002!@reeyaz.pongdh0.mongodb.net/?retryWrites=true&w=majority", {
+  .connect(config.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
     useFindAndModify: false,
   })
   .then(() => {
-    console.log('connected to MongoDB via url: ', config.MONGODB_URI);
+    console.log('connected to MongoDB');
   })
   .catch((error: any) => {
     console.log('error connecting to MongoDB', error.message);
