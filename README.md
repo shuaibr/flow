@@ -1,20 +1,60 @@
-<h1>Simplify Practice</h1>
+# Mizan — Personal Wellness OS
 
-<p>A web app project that tracks user's habits. </p>
-<p>User can create an account and login</p>
-<p>User can add habits and mark them completed for that day. Current streak will appear once the user has completed the habit two or more days in a row.</p>
-<p>User can navigate to a page that shows more detailed information of the given habit, like a calendar view of completed and missed days.</P>
+> Project scope updated: this repo is now driven by [`SPEC.md`](./SPEC.md)
+> (vision, phases, data streams, out-of-scope) and
+> [`PRINCIPLES.md`](./PRINCIPLES.md) (non-negotiable engineering
+> principles). They are the source of truth for planning and execution.
 
-<h3>Backend</h3>
-<p>Backend is build with Node.js, Express and Typescript, and it uses MongoDb as a data storage</p>
-<h3>Frontend</h3>
-<p>Client side is made with React and Typescript.</p>
+A phased personal wellness system that fuses objective wearable data
+(Garmin Forerunner 955 via the Garmin Connect API) with lightweight manual
+logging of everything the watch can't see — sauna sessions, yoga quality,
+supplements, tea/nutrition, mood, and spiritual practice — and turns it
+into one trustworthy daily readiness signal plus weekly experiments.
 
-<p>The client side uses Cypress for End-to-End (E2E) tests. To run these tests start backend development server in test mode with <br /> `npm run start:test`<br /> <br />frontend with `npm start`<br /> <br />and open Cypress in /frontend with `npm run cypress:open`<br /></p>
+## Scope at a glance
 
-<p>The server side uses Jest and Supertest for integration tests. To run these tests run <br /> `npm test`<br /> in backend root </p>
+- **Primary outcome (personal):** one reliable 6:45am readiness signal and
+  a weekly experiment cadence that demonstrably improves recovery markers
+  (HRV trend, Body Battery overnight refill, sleep consistency) within
+  12 weeks.
+- **Secondary outcome (financial, gated):** productization for hybrid
+  athletes is Phase 5 only, gated on 90 consecutive days of personal use
+  plus 3 unprompted outside requests.
+- **Kill criterion:** if daily logging takes > 3 minutes or is skipped
+  10 days in a month, simplify before adding anything.
 
-<img src="https://media.giphy.com/media/vYuSGcdwFHkl80TmZK/giphy.gif" alt="cypress-testing" />
+## Hard constraints
 
-<br />
-<p>Both frontend and backend have their own Readme documentation files in their respective folders</p>
+1. **Not a medical device** — no diagnosis, treatment claims, or
+   medication guidance.
+2. **Privacy by architecture** — local-first storage, encrypted at rest,
+   no third-party analytics, explicit export/delete. Spiritual-practice
+   logs live in a separate, extra-private namespace.
+3. **Garmin API terms** — personal-use OAuth app, rate-limit respect,
+   aggressive caching.
+
+## Phases
+
+| Phase | Deliverable |
+|---|---|
+| 0 | Data contract + privacy ADR (OAuth scopes, encryption, schemas, namespace isolation) |
+| 1 | Smallest closed loop: daily Garmin pull + 6-tap evening log + 3-week baseline + morning signal + Sunday digest |
+| 2 | Lifestyle streams + pre-registered single-variable experiment engine |
+| 3 | Whole-life integration: private practice-consistency namespace, schedule-aware suggestions |
+| 4 | Hardening: Open Wearables adapter option, data export, yearly review |
+| 5 | Productization (gated at 90-day personal streak) |
+
+See [`SPEC.md`](./SPEC.md) for the full system architecture (four-layer
+model), ecosystem map, communication loops, and out-of-scope list.
+
+## Existing codebase (pre-scope-change)
+
+This repo previously hosted **Simplify Practice**, a habit-tracking web
+app; its code remains under `backend/` (Node.js, Express, TypeScript,
+MongoDB) and `frontend/` (React, TypeScript), each with its own README.
+It is the starting point — not the target architecture — for the wellness
+OS described above.
+
+- Backend integration tests: `npm test` in `backend/`
+- Frontend E2E tests (Cypress): start backend with `npm run start:test`,
+  frontend with `npm start`, then `npm run cypress:open` in `frontend/`
