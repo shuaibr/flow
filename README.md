@@ -47,14 +47,9 @@ into one trustworthy daily readiness signal plus weekly experiments.
 See [`SPEC.md`](./SPEC.md) for the full system architecture (four-layer
 model), ecosystem map, communication loops, and out-of-scope list.
 
-## Existing codebase (pre-scope-change)
+## Status
 
-This repo previously hosted **Simplify Practice**, a habit-tracking web
-app; its code remains under `backend/` (Node.js, Express, TypeScript,
-MongoDB) and `frontend/` (React, TypeScript), each with its own README.
-It is the starting point — not the target architecture — for the wellness
-OS described above.
-
-- Backend integration tests: `npm test` in `backend/`
-- Frontend E2E tests (Cypress): start backend with `npm run start:test`,
-  frontend with `npm start`, then `npm run cypress:open` in `frontend/`
+Greenfield. This repo previously hosted an unrelated habit-tracking app;
+that code was removed (recoverable from git history) and the wellness OS
+is being built fresh per SPEC.md and PRINCIPLES.md, starting with Phase 0
+(data contract + privacy ADR).
