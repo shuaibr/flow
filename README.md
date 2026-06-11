@@ -1,9 +1,10 @@
 # Flow — Personal Wellness OS
 
 > Project scope updated: this repo is now driven by [`SPEC.md`](./SPEC.md)
-> (vision, phases, data streams, out-of-scope) and
-> [`PRINCIPLES.md`](./PRINCIPLES.md) (non-negotiable engineering
-> principles). They are the source of truth for planning and execution.
+> (vision, phases, data streams, out-of-scope), [`PRINCIPLES.md`](./PRINCIPLES.md)
+> (non-negotiable engineering principles), and [`OPERATIONS.md`](./OPERATIONS.md)
+> (portfolio operating rules — Flow is the Current Active repo, WIP cap = 1).
+> They are the source of truth for planning and execution.
 
 A phased personal wellness system that fuses objective wearable data
 (Garmin Forerunner 955 via the Garmin Connect API) with lightweight manual

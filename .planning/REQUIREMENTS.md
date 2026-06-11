@@ -42,10 +42,10 @@ roadmap phases.
 
 ### Delivery
 
-- [ ] **DLVR-01**: Operator receives a one-line readiness signal + one suggested emphasis by 6:45am daily
+- [ ] **DLVR-01**: Operator receives a forced-choice readiness string by 6:45am daily (`FLOW: GREEN — 4×4 OK / AMBER — Z2-yoga only / RED — rest`) + one-line reason — never an open-ended report (OPERATIONS Rule 1)
 - [ ] **DLVR-02**: Operator receives a Sunday-evening digest: trend chart, active experiment status, one candidate pattern, next week's single focus
 - [ ] **DLVR-03**: The digest narrative LLM receives only precomputed aggregates ("signature to the LLM"), capped at one call per week
-- [ ] **DLVR-04**: Operator can flag "signal felt wrong today" with one tap; disagreements are stored as tuning data
+- [ ] **DLVR-04**: Operator can flag agree/disagree with one tap; responses land in `metrics/loop_closure.csv` as the repo's AOR metric (OPERATIONS Rule 4) and feed formula tuning; vetoes append to `docs/codex.md`
 
 ### Experiments
 

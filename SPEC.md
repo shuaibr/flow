@@ -1,8 +1,8 @@
 # SPEC.md — Flow: Personal Wellness OS
 
-> GSD: read alongside PRINCIPLES.md. Personal-first; productization is a
-> gated Phase 5, not a design driver. The app is named "Flow" — keep this
-> name.
+> GSD: read alongside PRINCIPLES.md and OPERATIONS.md. Personal-first;
+> productization is a gated Phase 5, not a design driver. The app is named
+> "Flow" — keep this name. **Current Active repo per OPERATIONS.md Rule 3.**
 
 ## Vision
 
@@ -140,6 +140,14 @@ not more dashboards.
 - **Phase 5 — Productization (gated).** Only after 90-day personal streak:
   pick ONE form (templates / community / app) based on which loop proved
   stickiest personally.
+
+## Operations alignment (OPERATIONS.md governs)
+
+- **Action output:** forced-choice only (Rule 1) — schema in framework-alignment.md.
+- **Measure row = AOR** logged to `metrics/loop_closure.csv` (Rule 4).
+- **Coordination:** single agent + signal schema + operator disagreement log as review.
+- Session hygiene: `reentry.md` on every stop (Rule 2); WIP cap (Rule 3) and
+  meta-work quarantine (Rule 5) apply.
 
 ## Out of scope
 

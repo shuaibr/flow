@@ -52,9 +52,14 @@ One reliable 6:45am readiness signal the operator trusts enough to act on
 
 ## Context
 
-- Source of truth: `SPEC.md` (vision, phases, data streams) and
-  `PRINCIPLES.md` (non-negotiable engineering principles) in the repo
-  root.
+- Source of truth: `SPEC.md` (vision, phases, data streams),
+  `PRINCIPLES.md` (non-negotiable engineering principles), and
+  `OPERATIONS.md` (portfolio operating rules) in the repo root.
+- Flow is the **Current Active** repo in a six-repo portfolio
+  (OPERATIONS.md Rule 3, WIP cap = 1); milestone to vacate the slot:
+  framework-alignment filled → /gsd-plan-phase → first working readiness
+  signal. Operator attention budget is ~5–8 hrs/week across the whole
+  portfolio.
 - Greenfield: the repo's previous habit-tracker code was removed; only
   git history remains.
 - Operator schedule anchors: morning signal needed by 6:45am (before
@@ -101,6 +106,8 @@ One reliable 6:45am readiness signal the operator trusts enough to act on
 | GSD installed from open-gsd (`@opengsd/get-shit-done-redux`) | Original `get-shit-done-cc` npm package deprecated; governance moved to open-gsd | — Pending |
 | Personal-first; productization is a gated Phase 5 | Per SPEC — product pressure must not shape the personal system's design | — Pending |
 | Open Wearables adapter deferred behind the ingest interface | Not a Phase 1 dependency; same interface keeps the door open | — Pending |
+| Forced-choice signal output + AOR loop-closure metric | OPERATIONS.md Rules 1+4 — recommendations arrive as binary choices; % acted-on within 48h is the one metric that proves the loop closes | — Pending |
+| Single agent + operator veto as the only review layer | OPERATIONS.md Rule 1 — adversarial two-agent review scoped to scout only; sequential pipeline gains nothing from more agents | — Pending |
 
 ## Evolution
 
