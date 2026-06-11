@@ -99,13 +99,46 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| (populated by roadmapper) | | |
+| PRIV-01 | Phase 1 | Pending |
+| PRIV-02 | Phase 1 | Pending |
+| PRIV-03 | Phase 5 | Pending |
+| PRIV-04 | Phase 1 | Pending |
+| DATA-01 | Phase 1 | Pending |
+| DATA-02 | Phase 1 | Pending |
+| INGEST-01 | Phase 2 | Pending |
+| INGEST-02 | Phase 2 | Pending |
+| INGEST-03 | Phase 2 | Pending |
+| INGEST-04 | Phase 2 | Pending |
+| LOG-01 | Phase 2 | Pending |
+| LOG-02 | Phase 2 | Pending |
+| LOG-03 | Phase 2 | Pending |
+| LOG-04 | Phase 3 | Pending |
+| SIG-01 | Phase 2 | Pending |
+| SIG-02 | Phase 2 | Pending |
+| SIG-03 | Phase 2 | Pending |
+| SIG-04 | Phase 2 | Pending |
+| SIG-05 | Phase 2 | Pending |
+| DLVR-01 | Phase 2 | Pending |
+| DLVR-02 | Phase 2 | Pending |
+| DLVR-03 | Phase 3 | Pending |
+| DLVR-04 | Phase 2 | Pending |
+| EXP-01 | Phase 3 | Pending |
+| EXP-02 | Phase 3 | Pending |
+| EXP-03 | Phase 3 | Pending |
+| EXP-04 | Phase 3 | Pending |
+| LIFE-01 | Phase 4 | Pending |
+| LIFE-02 | Phase 4 | Pending |
+| LIFE-03 | Phase 4 | Pending |
+| OPS-01 | Phase 2 | Pending |
+| OPS-02 | Phase 1 | Pending |
+| OPS-03 | Phase 2 | Pending |
+| OPS-04 | Phase 5 | Pending |
 
 **Coverage:**
-- v1 requirements: 30 total
-- Mapped to phases: 0
-- Unmapped: 30 ⚠️ (pending roadmap)
+- v1 requirements: 34 total (previous footer said 30 — corrected after recount during roadmap creation)
+- Mapped to phases: 34
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-06-11*
-*Last updated: 2026-06-11 after initial definition*
+*Last updated: 2026-06-11 after roadmap creation (traceability populated)*
