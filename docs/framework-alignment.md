@@ -48,7 +48,7 @@
 ## 4. Phase 1 Checklist
 
 - [x] Repo initialized with this doc at `docs/framework-alignment.md`
-- [ ] `config.yaml` with stream schemas + formula weights v1 + budgets
+- [x] `config.yaml` with stream schemas + formula weights v1 + budgets
 - [x] `/research/inbox/` created
 - [ ] `npx get-shit-done-cc@latest` run in clean environment
 - [ ] This doc + SPEC.md + PRINCIPLES.md + OPERATIONS.md fed into `/gsd-plan-phase`

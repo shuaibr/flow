@@ -1,0 +1,63 @@
+# config.yaml — Flow data contract, formula weights, budgets
+# Governed by SPEC.md + docs/framework-alignment.md.
+# Formula changes are versioned here and annotated on charts (release hygiene).
+
+streams:
+  # Phase 1 — objective core (Garmin Connect API, 1 sync/day + on-demand)
+  garmin:
+    hrv_status:        { type: object, fields: { status: enum[balanced, unbalanced, low], overnight_avg_ms: int }, freshness_max_hours: 30 }
+    sleep:             { type: object, fields: { total_min: int, deep_min: int, rem_min: int, light_min: int, score: int, start: datetime, end: datetime }, freshness_max_hours: 30 }
+    body_battery:      { type: object, fields: { overnight_refill: int, waking_level: int }, freshness_max_hours: 30 }
+    training_readiness: { type: object, fields: { score: int }, freshness_max_hours: 30 }
+    stress:            { type: object, fields: { daily_avg: int }, freshness_max_hours: 30 }
+    activities:        { type: list, fields: { sport: str, duration_min: int, load: int, avg_hr: int }, freshness_max_hours: 30 }
+    resting_hr:        { type: object, fields: { bpm: int }, freshness_max_hours: 30 }
+
+  # Phase 1 — manual core (6-tap evening log; counted fields, not free text)
+  manual:
+    sauna:               { type: object, fields: { done: bool, duration_min: int, hr_recovery_note: str? } }
+    perceived_readiness: { type: object, fields: { score: int }, range: [1, 5] }
+    note:                { type: object, fields: { text: str? }, optional: true }
+    signal_disagreement: { type: object, fields: { felt_wrong: bool }, comment: "one-tap; most valuable training data (SPEC communication loops)" }
+
+  # Phase 3 — private namespace: separate DB file, never scored, never in telemetry.
+  # Schema intentionally NOT defined here; lives in the private namespace only.
+
+readiness_formula:
+  version: 1
+  comment: >
+    Weighted composite over normalized inputs (0..1 each). Pure function over
+    the store; recompute is idempotent. Causality hypothesis (SPEC): sleep
+    consistency and load balance are highest-leverage — weights reflect that
+    and get tuned by the disagreement loop, not by intuition.
+  weights:
+    sleep: 0.30
+    hrv_status: 0.25
+    body_battery_refill: 0.20
+    training_load_balance: 0.15
+    resting_hr_delta: 0.10
+  thresholds:
+    green: 0.70   # "GREEN — 4×4 OK"
+    amber: 0.45   # "AMBER — Z2-yoga only"; below amber => "RED — rest"
+  gates:
+    baseline_days_before_recommendations: 21
+    missing_stream_policy: degrade_and_disclose   # show inputs + freshness; never impute silently
+
+delivery:
+  morning_signal_deadline_local: "06:45"
+  weekly_digest: { day: sunday, window_local: "19:00-21:00" }
+  output_schema: "FLOW: {GREEN|AMBER|RED} — {one-line reason}"   # forced-choice, OPERATIONS Rule 1
+
+budgets:                      # enforced in code, alert at 80% (PRINCIPLES §1)
+  garmin_syncs_per_day: 1     # plus on-demand, manual trigger only
+  max_runtime_per_job_min: 5
+  llm_daily_cap_cad: 0.50     # weekly narrative digest only
+  manual_log_budget_min_per_day: 2
+  warn_at_fraction: 0.8
+
+model_tiers:                  # PRINCIPLES §5 — assignments live here, never inline
+  weekly_digest_narrative: frontier
+  bulk_extraction: none       # no bulk extraction in Phase 1
+
+metrics:
+  aor_log: metrics/loop_closure.csv   # OPERATIONS Rule 4; demote if AOR < 50% over 2 weeks
