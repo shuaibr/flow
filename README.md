@@ -1,5 +1,16 @@
 <h1>Simplify Practice</h1>
 
+<blockquote>
+<p><strong>Project governance:</strong> this repo is the <em>flow</em> project of the agentic
+portfolio. Vision and phases live in <a href="SPEC.md">SPEC.md</a> (personal wellness OS),
+engineering constraints in <a href="PRINCIPLES.md">PRINCIPLES.md</a>, operating rules in
+<a href="OPERATIONS.md">OPERATIONS.md</a>, and the loop/architecture gates in
+<a href="docs/framework-alignment.md">docs/framework-alignment.md</a>. The habit-tracker
+app described below is the pre-existing codebase; see
+<a href="docs/AGENT_PRINCIPLES.md">docs/AGENT_PRINCIPLES.md</a> for how the shared
+principles apply to it.</p>
+</blockquote>
+
 <p>A web app project that tracks user's habits. </p>
 <p>User can create an account and login</p>
 <p>User can add habits and mark them completed for that day. Current streak will appear once the user has completed the habit two or more days in a row.</p>

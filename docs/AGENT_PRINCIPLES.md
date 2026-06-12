@@ -1,5 +1,17 @@
 # Agent Principles — Flow
 
+> **Document hierarchy:** this repo is governed by the portfolio spec pack —
+> [`SPEC.md`](../SPEC.md) (project vision: Flow personal wellness OS),
+> [`PRINCIPLES.md`](../PRINCIPLES.md) (non-negotiable engineering
+> constraints), [`OPERATIONS.md`](../OPERATIONS.md) (portfolio operating
+> rules: WIP cap, AOR, forced-choice outputs), and
+> [`framework-alignment.md`](framework-alignment.md) (loop definition and
+> architecture gates). Where this doc and those conflict, **they win**.
+> This doc remains as the repo-specific application of the shared principles
+> to the *current* TypeScript habit-tracker codebase, which predates the
+> spec; SPEC.md describes where the project is going (Garmin + manual-log
+> wellness OS), not what the legacy code does today.
+
 Foundational principles for human and AI agents working in this repository.
 The operating bias is **validate first, optimize later**: ship the smallest
 change that proves a product or feature hypothesis, then invest in scaling
