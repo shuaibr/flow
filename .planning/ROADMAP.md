@@ -32,7 +32,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Versioned schemas exist and are tested for every Phase 1 data stream (7 Garmin streams + the manual-log events table with ULID/event_type/schema_version/supersedes) before any ingestion code is written
   4. ADRs in `docs/adr/` record the Garmin access method (community `garminconnect`; official Health API excludes personal use), the encryption choice, and the private-namespace isolation design; no secrets appear in source, commits, or logs
   5. All budgets (runtime per job, API calls, LLM spend) live in `config.yaml` and are enforced by code-level guards that warn at 80% and hard-block at 100%
-**Plans**: TBD
+**Plans**: 5 plans
+- [ ] 01-01-PLAN.md — Walking Skeleton: uv scaffold + encrypted connection factory + flow init write/read + first schema test (PRIV-01, DATA-01)
+- [ ] 01-02-PLAN.md — Full data contract: 7 Garmin schemas + event payloads + full DDL + golden-fixture format (DATA-01)
+- [ ] 01-03-PLAN.md — Privacy: separate private.db namespace + export-exclusion-by-construction + secrets discipline (PRIV-01, PRIV-02, PRIV-04)
+- [ ] 01-04-PLAN.md — Budgets: config.yaml + FlowSettings + BudgetGuard (warn 80%/block 100%) with persistence (OPS-02)
+- [ ] 01-05-PLAN.md — ADRs: Garmin access, encryption, private-namespace isolation + presence test (DATA-02)
 
 ### Phase 2: Smallest Closed Loop
 **Goal**: The operator wakes to one trustworthy 6:45am readiness line, logs the evening in under 2 minutes, and the whole loop runs unattended with same-day failure detection — then proves itself over 4 weeks of real-world operation.
@@ -95,7 +100,7 @@ Phases execute in numeric order: 1 → 2 → (4-week soak) → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Data Contract & Privacy Foundations | 0/TBD | Not started | - |
+| 1. Data Contract & Privacy Foundations | 0/5 | Not started | - |
 | 2. Smallest Closed Loop | 0/TBD | Not started | - |
 | 3. Lifestyle Streams & Experiment Engine | 0/TBD | Not started | - |
 | 4. Whole-Life Integration & Formula Tuning | 0/TBD | Not started | - |
