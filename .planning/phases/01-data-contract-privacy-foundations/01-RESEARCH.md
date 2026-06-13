@@ -833,7 +833,12 @@ event_id = new_event_id()   # e.g. '01KV0STJZSZ93MVSKPNA902670'
 
 ---
 
-## Open Questions
+## Open Questions (RESOLVED)
+
+> All three have resolution paths captured in the Phase 1 plans: OQ1 → Plan
+> 01-04 Task 1 (settings_customise_sources fallback to SettingsConfigDict
+> yaml_file); OQ2 → Plan 01-03 Task 3 (token dir = `data/tokens/` constant);
+> OQ3 → Plan 01-04 Task 1 (config.yaml holds only Phase-1 budgets + model tier).
 
 1. **`pydantic-settings` `settings_customise_sources` exact signature in 2.14.x**
    - What we know: `YamlConfigSettingsSource` works; the class exists and loads YAML correctly.
